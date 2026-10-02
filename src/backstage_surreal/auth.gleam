@@ -42,17 +42,20 @@ pub fn get_user_token(
 /// Add user authentication to the route with the name for the security scheme, 
 /// the type of the identifier and the JWT key to use.
 pub fn user_auth(
-  next: backstage.Next(_, next),
+  spec: backstage.RouteSpecBuilder,
   name: String,
   type_: String,
   key: key.Key,
-) -> backstage.SequentialNext(UserAuth(a), next) {
-  let unauthorized = backstage.unauthorized(next)
-  backstage_core.sequential(
-    next: next,
-    doc: fn(doc) {
+  next: fn(
+    backstage.RouteSpecBuilder,
+    backstage.RouteCapability(UserAuth(a), next),
+  ) -> backstage.RouteSpec(next),
+) -> backstage.RouteSpec(next) {
+  use spec, unauthorized <- backstage.unauthorized(spec)
+  next(
+    backstage_core.RouteSpecBuilder(doc: fn(doc) {
       doc
-      |> unauthorized.doc()
+      |> spec.doc()
       |> backstage_core.modify_operation(fn(operation) {
         operation
         |> openapi.operation.security(name)
@@ -64,12 +67,12 @@ pub fn user_auth(
           |> openapi.security_scheme.bearer_format("JWT")
         })
       })
-    },
-    single: fn(request) {
-      use unauthorized <- result.try(unauthorized.single(request))
+    }),
+    backstage_core.RouteCapability(get: fn(request, next) {
+      use unauthorized <- unauthorized.get(request)
       use id <- result.try(get_user_token(request, type_, key, unauthorized))
 
-      Ok(UserAuth(id: id))
-    },
+      next(UserAuth(id: id))
+    }),
   )
 }
