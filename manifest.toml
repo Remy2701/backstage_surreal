@@ -2,18 +2,21 @@
 # You typically do not need to edit this file
 
 packages = [
-  { name = "backstage", version = "0.2.0", build_tools = ["gleam"], requirements = ["gleam_http", "gleam_json", "gleam_stdlib", "gleam_time", "json_value", "mist", "taffy", "wisp"], source = "git", repo = "https://github.com/Remy2701/backstage.git", commit = "0c8e933a8edc0ab0f2e25d1529764991ea29de36" },
+  { name = "backstage", version = "0.3.0", build_tools = ["gleam"], requirements = ["garanti", "gleam_http", "gleam_json", "gleam_stdlib", "gleam_time", "json_value", "mist", "taffy", "wisp"], source = "git", repo = "https://github.com/Remy2701/backstage.git", commit = "345f9491bdba8500752fe575fd635ac74276a113" },
   { name = "birl", version = "2.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "gleam_time", "ranger"], otp_app = "birl", source = "hex", outer_checksum = "51F9D18050231ED8A324A5A87C07F2582E22C1CA8BBDEC213623A7B39AF060F1" },
   { name = "collie", version = "2.0.1", build_tools = ["gleam"], requirements = ["exception", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_otp", "gleam_stdlib", "logging", "websocks"], otp_app = "collie", source = "hex", outer_checksum = "01CDDCF0CABABC253638450EB2E39706E98ACF47C80C9941F30EFDB58888EB89" },
   { name = "directories", version = "1.2.0", build_tools = ["gleam"], requirements = ["envoy", "gleam_stdlib", "platform", "simplifile"], otp_app = "directories", source = "hex", outer_checksum = "D13090CFCDF6759B87217E8DDD73A75903A700148A82C1D33799F333E249BF9E" },
   { name = "envoy", version = "1.2.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "envoy", source = "hex", outer_checksum = "9C6FBB6BFA02A52798BEEC5977A738CAD6E4A057F4B67FD0C8061AD2502C191A" },
   { name = "exception", version = "2.1.1", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "exception", source = "hex", outer_checksum = "6BDEA95248093599391C3B5DF1835C5C6A86C353C2F99CE539B450E3432FE117" },
   { name = "filepath", version = "1.1.2", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "filepath", source = "hex", outer_checksum = "B06A9AF0BF10E51401D64B98E4B627F1D2E48C154967DA7AF4D0914780A6D40A" },
+  { name = "garanti", version = "0.1.1", build_tools = ["gleam"], requirements = ["gleam_javascript", "gleam_stdlib", "pretty_diff"], otp_app = "garanti", source = "hex", outer_checksum = "A64D348D25B9F4E90ABACDEA8D0E50B6112C12628CCB3DF66DB2AB88CB298BBD" },
   { name = "gjwt", version = "2.0.1", build_tools = ["gleam"], requirements = ["birl", "gleam_erlang", "gleam_json", "gleam_stdlib", "jason", "jose"], otp_app = "gjwt", source = "hex", outer_checksum = "A38DD2A42A8A6DA7A6555C3B9C9BB897C82C68FA84B1703862DB0171490EF350" },
+  { name = "glam", version = "2.0.4", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "glam", source = "hex", outer_checksum = "48A043A12091F93D911C316DD8F7FFD03CD9FF6F50848FC56E359D3C168DF0FA" },
   { name = "gleam_crypto", version = "1.6.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_crypto", source = "hex", outer_checksum = "2DE9E4EF53CF6FEE049D4F765731F7178F7A11AEFAE00EEE63BF7536B354AD3F" },
   { name = "gleam_erlang", version = "1.3.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_erlang", source = "hex", outer_checksum = "1124AD3AA21143E5AF0FC5CF3D9529F6DB8CA03E43A55711B60B6B7B3874375C" },
   { name = "gleam_http", version = "4.4.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_http", source = "hex", outer_checksum = "F065CE9941A7756ABBAEAE7F9F32A96CAD29DA3311A381DB2D926EA8E8C156DC" },
   { name = "gleam_httpc", version = "5.0.0", build_tools = ["gleam"], requirements = ["gleam_erlang", "gleam_http", "gleam_stdlib"], otp_app = "gleam_httpc", source = "hex", outer_checksum = "C545172618D07811494E97AAA4A0FB34DA6F6D0061FDC8041C2F8E3BE2B2E48F" },
+  { name = "gleam_javascript", version = "1.0.1", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_javascript", source = "hex", outer_checksum = "D542C4B4F40E942F5D3372D524419FA521A7BB92D621AF696CC286E89D882D55" },
   { name = "gleam_json", version = "3.1.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_json", source = "hex", outer_checksum = "44FDAA8847BE8FC48CA7A1C089706BD54BADCC4C45B237A992EDDF9F2CDB2836" },
   { name = "gleam_otp", version = "1.3.0", build_tools = ["gleam"], requirements = ["gleam_erlang", "gleam_stdlib"], otp_app = "gleam_otp", source = "hex", outer_checksum = "DE4CA6850842F0266EE95317A25DD6A0A0F20CDFAB7C0ADC2E63251D7C3C72EC" },
   { name = "gleam_regexp", version = "1.1.1", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "gleam_regexp", source = "hex", outer_checksum = "9C215C6CA84A5B35BB934A9B61A9A306EC743153BE2B0425A0D032E477B062A9" },
@@ -34,19 +37,20 @@ packages = [
   { name = "module", version = "0.1.3", build_tools = ["gleam"], requirements = ["gleam_stdlib"], source = "git", repo = "https://github.com/Remy2701/module.git", commit = "93f410439547f272346670cd0968749ee23cfb1e" },
   { name = "odysseus", version = "1.0.0", build_tools = ["gleam"], requirements = [], otp_app = "odysseus", source = "hex", outer_checksum = "6A97DA1075BDDEA8B60F47B1DFFAD49309FA27E73843F13A0AF32EA7087BA11C" },
   { name = "platform", version = "1.0.0", build_tools = ["gleam"], requirements = [], otp_app = "platform", source = "hex", outer_checksum = "8339420A95AD89AAC0F82F4C3DB8DD401041742D6C3F46132A8739F6AEB75391" },
+  { name = "pretty_diff", version = "1.0.1", build_tools = ["gleam"], requirements = ["glam", "gleam_stdlib"], otp_app = "pretty_diff", source = "hex", outer_checksum = "481750E997A0277BDAA0CB416DEDF7BAA6B3C9EF8424FC18ED005D2E9FD6E8FC" },
   { name = "ranger", version = "1.4.0", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gleam_yielder"], otp_app = "ranger", source = "hex", outer_checksum = "C8988E8F8CDBD3E7F4D8F2E663EF76490390899C2B2885A6432E942495B3E854" },
   { name = "sceall", version = "1.1.0", build_tools = ["gleam"], requirements = ["gleam_erlang", "gleam_stdlib"], otp_app = "sceall", source = "hex", outer_checksum = "20DC648A610555561F4F65A354FD658CAE2275F16033D262186646EADAEE853B" },
   { name = "simplifile", version = "2.7.0", build_tools = ["gleam"], requirements = ["filepath", "gleam_stdlib"], otp_app = "simplifile", source = "hex", outer_checksum = "A2727627B063E87351934C7F7F008F2D1FDB16F6DE0B8C79F9E46459CFC9C164" },
   { name = "str", version = "2.1.1", build_tools = ["gleam"], requirements = ["gleam_stdlib", "houdini", "odysseus"], otp_app = "str", source = "hex", outer_checksum = "641BBAE6BB781B9652EA0A47A8D06E536BF823397FD2BE4C5754B67E333C999E" },
-  { name = "surreal", version = "0.1.6", build_tools = ["gleam"], requirements = ["collie", "exception", "gjwt", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_httpc", "gleam_json", "gleam_otp", "gleam_stdlib", "gleam_time", "json_value", "module", "sceall", "str"], source = "git", repo = "https://github.com/Remy2701/surreal.git", commit = "257c950d63dc88dc4f773c33f3d6b603ceb508fd" },
+  { name = "surreal", version = "0.1.7", build_tools = ["gleam"], requirements = ["collie", "exception", "gjwt", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_httpc", "gleam_json", "gleam_otp", "gleam_stdlib", "gleam_time", "json_value", "module", "sceall", "str"], source = "git", repo = "https://github.com/Remy2701/surreal.git", commit = "715636adb22ae75451ebd1d33608c508c9c5b8ad" },
   { name = "taffy", version = "1.1.2", build_tools = ["gleam"], requirements = ["gleam_json", "gleam_stdlib"], otp_app = "taffy", source = "hex", outer_checksum = "49398358B8EEC1EF2101F53DF0AC6B46EEA01E42092DBE076C41D06214E2E19C" },
   { name = "websocks", version = "3.0.1", build_tools = ["gleam"], requirements = ["gleam_crypto", "gleam_erlang", "gleam_stdlib"], otp_app = "websocks", source = "hex", outer_checksum = "C70340E5B6C3390383ADA17029DCA6F8903863A7AD8CD8E1520EDCC4FE70D6FD" },
   { name = "wisp", version = "2.2.2", build_tools = ["gleam"], requirements = ["directories", "exception", "filepath", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_json", "gleam_stdlib", "houdini", "logging", "marceau", "mist", "simplifile"], otp_app = "wisp", source = "hex", outer_checksum = "5FF5F1E288C3437252ABB93D8F9CF42FF652CE7AD54480CFE736038DC09C4F22" },
 ]
 
 [requirements]
-backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.2.0" }
+backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.3.0" }
 gjwt = { version = ">= 2.0.1 and < 3.0.0" }
 gleam_stdlib = { version = ">= 1.0.0 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
-surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.1.6" }
+surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.1.7" }

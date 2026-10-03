@@ -1,5 +1,4 @@
-import dynamic/decode
-import dynamic/encode
+import dynamic/serialize
 import dynamic/spec
 import gleam/option.{type Option, None, Some}
 import openapi/openapi_type.{type OpenAPIType}
@@ -21,23 +20,16 @@ fn openapi_spec(type_: Option(String)) -> OpenAPIType {
   )
 }
 
-/// The decoder for the `Record` type.
-pub fn decoder(
-  decoder: decode.Decoder(a),
+pub fn serializer(
+  serializer: serialize.Serializer(a),
   id: fn(a) -> Identifier(a),
-) -> decode.Decoder(Record(a)) {
-  decode.Decoder(decoder: record.decoder(decoder.decoder, id), doc: fn() {
-    openapi_spec(None)
-  })
-}
-
-/// The encoder for the `Record` type.
-pub fn encoder(encoder: encode.Encoder(a)) -> encode.Encoder(Record(a)) {
-  encode.Encoder(
+) -> serialize.Serializer(Record(a)) {
+  serialize.Serializer(
+    decoder: record.decoder(serializer.decoder, id),
     encoder: fn(record) {
       case record {
         record.Id(id) -> spec.string(identifier.to_string(id))
-        record.Record(_, value) -> encoder.encoder(value)
+        record.Record(_, value) -> serializer.encoder(value)
       }
     },
     doc: fn() { openapi_spec(None) },

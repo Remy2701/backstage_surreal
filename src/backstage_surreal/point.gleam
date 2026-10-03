@@ -1,5 +1,4 @@
-import dynamic/decode
-import dynamic/encode
+import dynamic/serialize
 import dynamic/spec
 import openapi/openapi_type.{type OpenAPIType}
 import surreal/point.{type Point}
@@ -15,14 +14,9 @@ fn openapi_spec() -> OpenAPIType {
   ])
 }
 
-/// The decoder for the `Point` type.
-pub fn decoder() -> decode.Decoder(Point) {
-  decode.Decoder(decoder: point.decoder(), doc: openapi_spec)
-}
-
-/// The encoder for the `Point` type.
-pub fn encoder() -> encode.Encoder(Point) {
-  encode.Encoder(
+pub fn serializer() -> serialize.Serializer(Point) {
+  serialize.Serializer(
+    decoder: point.decoder(),
     encoder: fn(point: Point) {
       spec.object([
         #("type", spec.string("Point")),

@@ -1,5 +1,4 @@
-import dynamic/decode
-import dynamic/encode
+import dynamic/serialize
 import dynamic/spec
 import gleam/list
 import gleam/option.{type Option, None, Some}
@@ -20,32 +19,27 @@ fn openapi_spec(type_: Option(String)) -> OpenAPIType {
   )
 }
 
-/// The decoder for the `Identifier` type.
-pub fn decoder() -> decode.Decoder(Identifier(a)) {
-  decode.Decoder(decoder: identifier.decoder(), doc: fn() { openapi_spec(None) })
-}
-
-/// The decoder for the `Identifier` type with a specific type prefix.
-pub fn typed_decoder(types: List(String)) -> decode.Decoder(Identifier(a)) {
-  decode.Decoder(decoder: identifier.typed_decoder(types), doc: fn() {
-    list.first(types) |> option.from_result |> openapi_spec()
-  })
-}
-
-/// The encoder for the `Identifier` type.
-pub fn encoder() -> encode.Encoder(Identifier(a)) {
-  encode.Encoder(
+pub fn serializer() -> serialize.Serializer(Identifier(a)) {
+  serialize.Serializer(
+    decoder: identifier.decoder(),
     encoder: fn(id) { spec.string(identifier.to_string(id)) },
     doc: fn() { openapi_spec(None) },
   )
 }
 
-/// The encoder for the `Identifier` type with a specific type prefix.
-pub fn typed_encoder(type_: String) -> encode.Encoder(Identifier(a)) {
-  encode.Encoder(
+pub fn typed_serializer(
+  types: List(String),
+) -> serialize.Serializer(Identifier(a)) {
+  serialize.Serializer(
+    decoder: identifier.typed_decoder(types),
     encoder: fn(id) {
-      id |> identifier.typed(type_) |> identifier.to_string |> spec.string
+      case types {
+        [first, ..] -> identifier.typed(id, first)
+        _ -> id
+      }
+      |> identifier.to_string()
+      |> spec.string()
     },
-    doc: fn() { openapi_spec(Some(type_)) },
+    doc: fn() { list.first(types) |> option.from_result |> openapi_spec() },
   )
 }
