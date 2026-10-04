@@ -43,7 +43,7 @@ packages = [
   { name = "sceall", version = "1.1.0", build_tools = ["gleam"], requirements = ["gleam_erlang", "gleam_stdlib"], otp_app = "sceall", source = "hex", outer_checksum = "20DC648A610555561F4F65A354FD658CAE2275F16033D262186646EADAEE853B" },
   { name = "simplifile", version = "2.7.0", build_tools = ["gleam"], requirements = ["filepath", "gleam_stdlib"], otp_app = "simplifile", source = "hex", outer_checksum = "A2727627B063E87351934C7F7F008F2D1FDB16F6DE0B8C79F9E46459CFC9C164" },
   { name = "str", version = "2.1.1", build_tools = ["gleam"], requirements = ["gleam_stdlib", "houdini", "odysseus"], otp_app = "str", source = "hex", outer_checksum = "641BBAE6BB781B9652EA0A47A8D06E536BF823397FD2BE4C5754B67E333C999E" },
-  { name = "surreal", version = "0.1.8", build_tools = ["gleam"], requirements = ["collie", "exception", "gjwt", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_httpc", "gleam_json", "gleam_otp", "gleam_stdlib", "gleam_time", "json_value", "module", "sceall", "str"], source = "git", repo = "https://github.com/Remy2701/surreal.git", commit = "b57e48070dc95b5edb07806c4d0e1564f4f237c9" },
+  { name = "surreal", version = "0.1.9", build_tools = ["gleam"], requirements = ["collie", "exception", "gjwt", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_httpc", "gleam_json", "gleam_otp", "gleam_stdlib", "gleam_time", "json_value", "module", "sceall", "str"], source = "git", repo = "https://github.com/Remy2701/surreal.git", commit = "e5307bf9fb20a5a5d1d9cc9e255347fa46fc4e38" },
   { name = "taffy", version = "1.1.2", build_tools = ["gleam"], requirements = ["gleam_json", "gleam_stdlib"], otp_app = "taffy", source = "hex", outer_checksum = "49398358B8EEC1EF2101F53DF0AC6B46EEA01E42092DBE076C41D06214E2E19C" },
   { name = "websocks", version = "3.0.1", build_tools = ["gleam"], requirements = ["gleam_crypto", "gleam_erlang", "gleam_stdlib"], otp_app = "websocks", source = "hex", outer_checksum = "C70340E5B6C3390383ADA17029DCA6F8903863A7AD8CD8E1520EDCC4FE70D6FD" },
   { name = "wisp", version = "2.2.2", build_tools = ["gleam"], requirements = ["directories", "exception", "filepath", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_json", "gleam_stdlib", "houdini", "logging", "marceau", "mist", "simplifile"], otp_app = "wisp", source = "hex", outer_checksum = "5FF5F1E288C3437252ABB93D8F9CF42FF652CE7AD54480CFE736038DC09C4F22" },
@@ -54,4 +54,4 @@ backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.4.0" 
 gjwt = { version = ">= 2.0.1 and < 3.0.0" }
 gleam_stdlib = { version = ">= 1.0.0 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
-surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.1.8" }
+surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.1.9" }
