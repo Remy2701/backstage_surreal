@@ -3,7 +3,7 @@ version = "0.3.4"
 
 [dependencies]
 gleam_stdlib = ">= 1.0.0 and < 2.0.0"
-backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.3.3" }
+backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.3.4" }
 surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.1.8" }
 gjwt = ">= 2.0.1 and < 3.0.0"
 

@@ -2,12 +2,13 @@
 # You typically do not need to edit this file
 
 packages = [
-  { name = "backstage", version = "0.3.3", build_tools = ["gleam"], requirements = ["garanti", "gleam_http", "gleam_json", "gleam_stdlib", "gleam_time", "json_value", "mist", "taffy", "wisp"], source = "git", repo = "https://github.com/Remy2701/backstage.git", commit = "c2dfedf4f876ca39c3d4938a1f0361e412867efe" },
+  { name = "backstage", version = "0.3.4", build_tools = ["gleam"], requirements = ["file_streams", "garanti", "gleam_http", "gleam_json", "gleam_stdlib", "gleam_time", "json_value", "mist", "taffy", "wisp"], source = "git", repo = "https://github.com/Remy2701/backstage.git", commit = "b4457e2b06bd069e6b4ce6050ae6a518e834259c" },
   { name = "birl", version = "2.0.0", build_tools = ["gleam"], requirements = ["gleam_regexp", "gleam_stdlib", "gleam_time", "ranger"], otp_app = "birl", source = "hex", outer_checksum = "51F9D18050231ED8A324A5A87C07F2582E22C1CA8BBDEC213623A7B39AF060F1" },
   { name = "collie", version = "2.0.1", build_tools = ["gleam"], requirements = ["exception", "gleam_crypto", "gleam_erlang", "gleam_http", "gleam_otp", "gleam_stdlib", "logging", "websocks"], otp_app = "collie", source = "hex", outer_checksum = "01CDDCF0CABABC253638450EB2E39706E98ACF47C80C9941F30EFDB58888EB89" },
   { name = "directories", version = "1.2.0", build_tools = ["gleam"], requirements = ["envoy", "gleam_stdlib", "platform", "simplifile"], otp_app = "directories", source = "hex", outer_checksum = "D13090CFCDF6759B87217E8DDD73A75903A700148A82C1D33799F333E249BF9E" },
   { name = "envoy", version = "1.2.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "envoy", source = "hex", outer_checksum = "9C6FBB6BFA02A52798BEEC5977A738CAD6E4A057F4B67FD0C8061AD2502C191A" },
   { name = "exception", version = "2.1.1", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "exception", source = "hex", outer_checksum = "6BDEA95248093599391C3B5DF1835C5C6A86C353C2F99CE539B450E3432FE117" },
+  { name = "file_streams", version = "2.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "file_streams", source = "hex", outer_checksum = "A12E1E618C7845D1C4FE88DD6096DF99FE9696FC56C9135765CE474FABF53F1A" },
   { name = "filepath", version = "1.1.2", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "filepath", source = "hex", outer_checksum = "B06A9AF0BF10E51401D64B98E4B627F1D2E48C154967DA7AF4D0914780A6D40A" },
   { name = "garanti", version = "0.1.1", build_tools = ["gleam"], requirements = ["gleam_javascript", "gleam_stdlib", "pretty_diff"], otp_app = "garanti", source = "hex", outer_checksum = "A64D348D25B9F4E90ABACDEA8D0E50B6112C12628CCB3DF66DB2AB88CB298BBD" },
   { name = "gjwt", version = "2.0.1", build_tools = ["gleam"], requirements = ["birl", "gleam_erlang", "gleam_json", "gleam_stdlib", "jason", "jose"], otp_app = "gjwt", source = "hex", outer_checksum = "A38DD2A42A8A6DA7A6555C3B9C9BB897C82C68FA84B1703862DB0171490EF350" },
@@ -49,7 +50,7 @@ packages = [
 ]
 
 [requirements]
-backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.3.3" }
+backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.3.4" }
 gjwt = { version = ">= 2.0.1 and < 3.0.0" }
 gleam_stdlib = { version = ">= 1.0.0 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
