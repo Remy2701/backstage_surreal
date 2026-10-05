@@ -6,10 +6,17 @@ import surreal/point.{type Point}
 /// The OpenAPI specifications for the `Point` type.
 fn openapi_spec() -> OpenAPIType {
   openapi_type.object([
-    #("type", openapi_type.string_enum(["Point"])),
-    #(
-      "coordinates",
-      openapi_type.array(openapi_type.number() |> openapi_type.format("double")),
+    openapi_type.ObjectProperty(
+      name: "type",
+      type_: openapi_type.string_enum(["Point"]),
+      required: True,
+    ),
+    openapi_type.ObjectProperty(
+      name: "coordinates",
+      type_: openapi_type.array(
+        openapi_type.number() |> openapi_type.format("double"),
+      ),
+      required: True,
     ),
   ])
 }
