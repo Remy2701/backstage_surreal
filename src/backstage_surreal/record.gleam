@@ -1,5 +1,6 @@
 import dynamic/serialize
 import dynamic/spec
+import gleam/list
 import gleam/option.{type Option, None, Some}
 import openapi/openapi_type.{type OpenAPIType}
 import surreal/identifier.{type Identifier}
@@ -33,5 +34,29 @@ pub fn serializer(
       }
     },
     doc: fn() { openapi_spec(None) },
+  )
+}
+
+pub fn typed_serializer(
+  serializer: serialize.Serializer(a),
+  id: fn(a) -> Identifier(a),
+  types: List(String),
+) -> serialize.Serializer(Record(a)) {
+  serialize.Serializer(
+    decoder: record.typed_decoder(serializer.decoder, id, types),
+    encoder: fn(record) {
+      case record {
+        record.Id(id) -> {
+          case types {
+            [first, ..] -> identifier.typed(id, first)
+            _ -> id
+          }
+          |> identifier.to_string
+          |> spec.string()
+        }
+        record.Record(_, value) -> serializer.encoder(value)
+      }
+    },
+    doc: fn() { list.first(types) |> option.from_result |> openapi_spec() },
   )
 }
