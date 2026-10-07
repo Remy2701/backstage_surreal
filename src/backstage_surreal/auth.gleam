@@ -49,11 +49,11 @@ pub fn user_auth(
   next: fn(
     backstage.RouteSpecBuilder,
     backstage.RouteCapability(UserAuth(a), next),
-  ) -> backstage.RouteSpec(next),
-) -> backstage.RouteSpec(next) {
+  ) -> backstage.RouteSpec,
+) -> backstage.RouteSpec {
   use spec, unauthorized <- backstage.unauthorized(spec)
   next(
-    backstage_core.RouteSpecBuilder(doc: fn(doc) {
+    backstage_core.RouteSpecBuilder(..spec, doc: fn(doc) {
       doc
       |> spec.doc()
       |> backstage_core.modify_operation(fn(operation) {
