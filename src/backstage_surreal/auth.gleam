@@ -53,26 +53,22 @@ pub fn user_auth(
 ) -> backstage.RouteSpec {
   use spec, unauthorized <- backstage.unauthorized(spec)
   next(
-    backstage_core.RouteSpecBuilder(..spec, doc: fn(doc) {
+    backstage_core.modify_spec(spec, fn(doc) {
       doc
-      |> spec.doc()
-      |> backstage_core.modify_operation(fn(operation) {
-        operation
-        |> openapi.operation.security(name)
-      })
+      |> backstage_core.modify_operation(openapi.operation.security(_, name))
       |> backstage_core.modify_doc(fn(doc) {
-        openapi.components.security_scheme(doc, name, "http", fn(security) {
-          security
-          |> openapi.security_scheme.scheme("bearer")
-          |> openapi.security_scheme.bearer_format("JWT")
-        })
+        use security <- openapi.components.security_scheme(doc, name, "http")
+
+        security
+        |> openapi.security_scheme.scheme("bearer")
+        |> openapi.security_scheme.bearer_format("JWT")
       })
     }),
-    backstage_core.RouteCapability(get: fn(request, next) {
+    backstage_core.capability(fn(request) {
       use unauthorized <- unauthorized.get(request)
       use id <- result.try(get_user_token(request, type_, key, unauthorized))
 
-      next(UserAuth(id: id))
+      Ok(UserAuth(id: id))
     }),
   )
 }
