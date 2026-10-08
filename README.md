@@ -7,5 +7,5 @@ A library to integrate SurrealDB with Backstage.
 
 ```toml
 [dependencies]
-backstage_surreal = { git = "https://github.com/Remy2701/backstage_surreal.git", ref = "v0.5.0" }
+backstage_surreal = { git = "https://github.com/Remy2701/backstage_surreal.git", ref = "v0.6.0" }
 ```
