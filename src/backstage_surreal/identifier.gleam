@@ -3,7 +3,46 @@ import dynamic/spec
 import gleam/list
 import gleam/option.{type Option, None, Some}
 import openapi/openapi_type.{type OpenAPIType}
-import surreal/identifier.{type Identifier}
+import surreal/identifier
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                Export from surreal/identifier                                 //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+
+/// Redefined from surreal/identifier
+pub type Identifier(a) =
+  identifier.Identifier(a)
+
+/// Redefined from surreal/identifier
+pub const create = identifier.Identifier
+
+/// Redefined from surreal/identifier
+pub const from_string = identifier.from_string
+
+/// Redefined from surreal/identifier
+pub const to_string = identifier.to_string
+
+/// Redefined from surreal/identifier
+pub const typed = identifier.typed
+
+/// Redefined from surreal/identifier
+pub const untyped = identifier.untyped
+
+/// Redefined from surreal/identifier
+pub const decoder = identifier.decoder
+
+/// Redefined from surreal/identifier
+pub const typed_decoder = identifier.typed_decoder
+
+/// Redefined from surreal/identifier
+pub const compare = identifier.compare
+
+/// Redefined from surreal/identifier
+pub const generate = identifier.generate
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                        Extra Functions                                        //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 
 /// The OpenAPI specification for the `Identifier` type.
 fn openapi_spec(type_: Option(String)) -> OpenAPIType {

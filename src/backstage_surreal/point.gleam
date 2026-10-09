@@ -1,7 +1,31 @@
 import dynamic/serialize
 import dynamic/spec
 import openapi/openapi_type.{type OpenAPIType}
-import surreal/point.{type Point}
+import surreal/point
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                   Export from surreal/point                                   //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+
+/// Redefined from surreal/point
+pub type Point =
+  point.Point
+
+/// Redefined from surreal/point
+pub const create = point.Point
+
+/// Redefined from surreal/point
+pub const decoder = point.decoder
+
+/// Redefined from surreal/point
+pub const to_json = point.to_json
+
+/// Redefined from surreal/point
+pub const to_surql = point.to_surql
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                        Extra Functions                                        //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 
 /// The OpenAPI specifications for the `Point` type.
 fn openapi_spec() -> OpenAPIType {
@@ -21,6 +45,7 @@ fn openapi_spec() -> OpenAPIType {
   ])
 }
 
+/// The serializer for Point
 pub fn serializer() -> serialize.Serializer(Point) {
   serialize.Serializer(
     decoder: point.decoder(),

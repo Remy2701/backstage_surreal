@@ -4,7 +4,37 @@ import gleam/list
 import gleam/option.{type Option, None, Some}
 import openapi/openapi_type.{type OpenAPIType}
 import surreal/identifier.{type Identifier}
-import surreal/record.{type Record}
+import surreal/record
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                   Export from surreal/record                                  //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+
+/// Redefined from surreal/record
+pub type Record(a) =
+  record.Record(a)
+
+/// Redefined from surreal/record
+pub const create_record = record.Record
+
+/// Redefined from surreal/record
+pub const create_id = record.Id
+
+/// Redefined from surreal/record
+pub const to_json = record.to_json
+
+/// Redefined from surreal/record
+pub const to_surql = record.to_surql
+
+/// Redefined from surreal/record
+pub const decoder = record.decoder
+
+/// Redefined from surreal/record
+pub const typed_decoder = record.typed_decoder
+
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
+//                                        Extra Functions                                        //
+// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 
 /// The OpenAPI specification for the `Record` type.
 fn openapi_spec(type_: Option(String)) -> OpenAPIType {
