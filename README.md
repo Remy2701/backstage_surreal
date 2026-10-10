@@ -1,11 +1,11 @@
-# backstage_surreal
+# Offstage - Suweal
 
-[![Package Version](https://img.shields.io/hexpm/v/backstage_surreal_unpublished)](https://hex.pm/packages/backstage_surreal_unpublished)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/backstage_surreal_unpublished/)
+[![Package Version](https://img.shields.io/hexpm/v/offstage_suweal)](https://hex.pm/packages/offstage_suweal)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/offstage_suweal/)
 
-A library to integrate SurrealDB with Backstage.
+A library to integrate Suweal with Offstage.
 
 ```toml
 [dependencies]
-backstage_surreal = { git = "https://github.com/Remy2701/backstage_surreal.git", ref = "v0.7.1" }
+offstage_suweal = ">= 0.8.0 and < 1.0.0"
 ```
