@@ -1,7 +1,7 @@
-import dynamic/serialize
-import dynamic/spec
-import openapi/openapi_type.{type OpenAPIType}
-import surreal/point
+import offstage/dynamic/serialize
+import offstage/dynamic/spec
+import offstage/openapi/openapi_type.{type OpenAPIType}
+import suweal/point
 
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 //                                   Export from surreal/point                                   //

@@ -1,9 +1,9 @@
-import dynamic/serialize
-import dynamic/spec
 import gleam/list
 import gleam/option.{type Option, None, Some}
-import openapi/openapi_type.{type OpenAPIType}
-import surreal/identifier
+import offstage/dynamic/serialize
+import offstage/dynamic/spec
+import offstage/openapi/openapi_type.{type OpenAPIType}
+import suweal/identifier
 
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 //                                Export from surreal/identifier                                 //

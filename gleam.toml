@@ -3,9 +3,9 @@ version = "0.7.1"
 
 [dependencies]
 gleam_stdlib = ">= 1.0.0 and < 2.0.0"
-backstage = { git = "https://github.com/Remy2701/backstage.git", ref = "v0.6.0" }
-surreal = { git = "https://github.com/Remy2701/surreal.git", ref = "v0.2.1" }
 gjwt = ">= 2.0.1 and < 3.0.0"
+offstage = ">= 0.7.0 and < 1.0.0"
+suweal = ">= 0.3.0 and < 1.0.0"
 
 [dev_dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
